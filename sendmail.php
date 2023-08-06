@@ -3,11 +3,10 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Excepiton;
 
 require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php'';
+require 'PHPMailer/src/PHPMailer.php';
 
 $mail=new PHPMailer(true);
 $mail->CharSet='UTF-8';
-$mail->setLanguage('ru', 'PHPMailer-6.8.0/language/');
 $mail->isHTML(true);
 
 $mail->addAddress('ingvar94@mail.ru')
