@@ -6,36 +6,22 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 
 $mail=new PHPMailer(true);
-$mail->CharSet='UTF-8';
-$mail->isHTML(true);
+$mail->CharSet="UTF-8";
 
-$mail->addAddress('ingvar94@mail.ru')
+$name=$_POST["name"];
+$email=$_POST["email"];
+$project=$_POST["project"];
+$message=$_POST["message"];
 
-$body='<h1>Новое сообщение</h1>';
+$body=$name.' '.$email.' '.$project.' '.$message;
+$theme="[Заявка с формы]";
 
-if(trim(!empty($_POST['name']))) {
-    $body.='<p><strong>Имя</strong> '.$_POST['name'].'</p>';
-}
-if(trim(!empty($_POST['name']))) {
-    $body.='<p><strong>Email</strong> '.$_POST['email'].'</p>';
-}
-if(trim(!empty($_POST['project']))) {
-    $body.='<p><strong>Проект</strong> '.$_POST['project'].'</p>';
-}
-if(trim(!empty($_POST['message']))) {
-    $body.='<p><strong>Сообщение</strong> '.$_POST['message'].'</p>';
-}
+$mail->addAddress("ingvar94@mail.ru");
 
-$mail->Body = $body;
+$mail->Subject=$theme;
+$mail->Body=$body;
 
-if(!$mail->send()){
-    $message='Ошибка';
-} else {
-    $message='Данные отправлены';
-}
+$mail->send();
 
-$response=['message'=>$message];
 
-header('Content-type: application/json');
-echo json_encode($response);
 
