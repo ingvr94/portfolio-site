@@ -8,10 +8,10 @@ require 'PHPMailer/src/PHPMailer.php';
 $mail=new PHPMailer(true);
 $mail->CharSet="UTF-8";
 
-$name=$_POST["name"];
-$email=$_POST["email"];
-$project=$_POST["project"];
-$message=$_POST["message"];
+$name="name";
+$email="email";
+$project="project";
+$message="message";
 
 $body=$name.' '.$email.' '.$project.' '.$message;
 $theme="[Заявка с формы]";
