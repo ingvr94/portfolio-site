@@ -11,7 +11,7 @@ $mail->setLanguage('ru', 'PHPMailer-6.8.0/language/');
 $mail->isHTML(true);
 
 
-$mail->setFrom('','Сайт портфолио')
+$mail->setFrom('ingvar94@mail.ru','Сайт портфолио')
 $mail->addAddress('ingvar94@mail.ru')
 
 $body='<h1>Новое сообщение</h1>';
