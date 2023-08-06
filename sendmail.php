@@ -2,8 +2,8 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Excepiton;
 
-require 'PHPMailer-6.8.0/src/Exception.php';
-require 'PHPMailer-6.8.0/src/PHPMailer.php'';
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php'';
 
 $mail=new PHPMailer(true);
 $mail->CharSet='UTF-8';
@@ -11,7 +11,7 @@ $mail->setLanguage('ru', 'PHPMailer-6.8.0/language/');
 $mail->isHTML(true);
 
 
-$mail->setFrom('ingvar94@mail.ru','Сайт портфолио')
+$mail->setFrom('igor_smirnov_777@me.com','Сайт портфолио')
 $mail->addAddress('ingvar94@mail.ru')
 
 $body='<h1>Новое сообщение</h1>';
@@ -42,4 +42,3 @@ $response=['message'=>$message];
 header('Content-type: application/json');
 echo json_encode($response);
 
-?>
