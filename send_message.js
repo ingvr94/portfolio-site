@@ -7,14 +7,16 @@ form.addEventListener('submit',formSend)
 async function formSend(e) {
     e.preventDefault();
 
-    let error=formValidate(form)
+    let error=formValidate(form);
+
+    let formData=new FormData(form);
 
     if (error===0) {
     formModal.classList.add('_sending');
     
       let response=await fetch('sendmail.php',{
         method:'POST',
-        body:FormData
+        body:formData
       });
       if (response.ok) {
         let result=await response.json();
