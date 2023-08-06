@@ -779,6 +779,14 @@ img {
     padding: 0.25rem 0.5rem 0.5rem 0;
 }
 
+.contact__button {
+    border:none;
+    box-shadow: none;
+}
+.contact__button_label{
+font-size: var(--normal-font-size)
+}
+
 .form__modal {
     position: fixed;
     top: 0;
