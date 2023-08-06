@@ -782,6 +782,7 @@ img {
 .contact__button {
     border:none;
     box-shadow: none;
+    cursor: pointer;
 }
 .contact__button_label{
 font-size: var(--normal-font-size)
