@@ -10,8 +10,6 @@ $mail->CharSet='UTF-8';
 $mail->setLanguage('ru', 'PHPMailer-6.8.0/language/');
 $mail->isHTML(true);
 
-
-$mail->setFrom('igor_smirnov_777@me.com','Сайт портфолио')
 $mail->addAddress('ingvar94@mail.ru')
 
 $body='<h1>Новое сообщение</h1>';
