@@ -24,7 +24,7 @@ async function formSend(e) {
         form.classList.remove('_sending');
       } else {
         alert('Ошибка');
-        form.classList.remove('_sending');
+        formModal.classList.remove('_sending');
       }
     } 
 }
