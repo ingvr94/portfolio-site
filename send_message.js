@@ -25,7 +25,7 @@ async function formSend(e) {
 
 async function sendData(mail){
     try {
-    const response=await fetch('https://portfolio-server-jtwq9tyrq-ingvr94.vercel.app/',{
+    const response=await fetch('https://portfolio-server-otzs6sc9w-ingvr94.vercel.app',{
         method:'POST',
         headers: {
             'Content-Type':'text/plain'
