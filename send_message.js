@@ -8,28 +8,39 @@ async function formSend(e) {
     e.preventDefault();
 
     let error=formValidate(form);
+    let mail=`<b>Заявка с сайта</b> `;
+    mail+=`<b>Имя:</b> ${this.name.value} `
+    mail+=`<b>Почта:</b> ${this.email.value} `
+    mail+=`<b>Проект:</b> ${this.project.value} `
+    mail+=`<b>Cообщение:</b> ${this.message.value}`
 
-    let formData=new FormData(form);
 
     if (error===0) {
-    formModal.classList.add('_sending');
-    
-      let response=await fetch('sendmail.php',{
-        method:'POST',
-        body:formData
-      });
-      if (response.ok) {
-        let result=await response.json();
-        alert(result.message);
-        formPreview.innerHTML='';
-        form.reset();
-        form.classList.remove('_sending');
-      } else {
-        alert('Ошибка');
-        formModal.classList.remove('_sending');
-      }
-    } 
+    sendData(mail);
+   
+
+    }
 }
+
+
+async function sendData(mail){
+    try {
+    const response=await fetch('https://portfolio-server-mu-one.vercel.app',{
+        method:'POST',
+        headers: {
+            'Content-Type':'text/plain'
+        },
+        body:JSON.stringify(mail)
+        
+        }
+        ).then(alert('Message sent!'))
+  } 
+
+  catch(err){
+    console.log(err)
+  }
+ 
+    } 
 
 function formValidate(form){
     let error=0;
