@@ -1,8 +1,44 @@
 
 document.addEventListener('DOMContentLoaded',function(){
-const form=document.getElementById('form');
-const formModal=document.querySelector('.form__modal')
+const form=document.getElementById('form')
+
+const contactButLabel=document.querySelector('.contact__button_label')
+const sendMessageIcon=document.getElementById('sendMessageIcon')
+const contactButton=document.querySelector('.contact__button');
+
+
 form.addEventListener('submit',formSend)
+
+async function sendSucceed() {
+        contactButton.classList.add('button__success')
+        contactButLabel.textContent='Message Sent'
+        sendMessageIcon.classList.remove('uil-message')
+        sendMessageIcon.classList.add('uil-check')
+        
+        setTimeout(()=>{   
+        contactButton.classList.remove('button__success')    
+        contactButLabel.textContent='Send Message'
+        sendMessageIcon.classList.remove('uil-check')
+        sendMessageIcon.classList.add('uil-message')
+        },3000)
+
+        form.reset();
+}
+
+async function sendFailed() {
+    contactButton.classList.add('button__failed')
+    contactButLabel.textContent='Message was not sent'
+    sendMessageIcon.classList.remove('uil-message')
+    sendMessageIcon.classList.add('uil-times-circle')
+    
+    setTimeout(()=>{   
+    contactButton.classList.remove('button__failed')    
+    contactButLabel.textContent='Send Message'
+    sendMessageIcon.classList.remove('uil-times-circle')
+    sendMessageIcon.classList.add('uil-message')
+    },3000)
+
+}
 
 async function formSend(e) {
     e.preventDefault();
@@ -18,7 +54,6 @@ async function formSend(e) {
     if (error===0) {
     sendData(mail);
    
-
     }
 }
 
@@ -33,10 +68,13 @@ async function sendData(mail){
         body:JSON.stringify(mail)
         
         }
-        ).then(alert('Message sent!'))
+        ).then(
+         sendSucceed()
+        )
   } 
 
   catch(err){
+    sendFailed();
     console.log(err)
   }
  
