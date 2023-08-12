@@ -52,7 +52,7 @@ async function formSend(e) {
 
 
     if (error===0) {
-    sendData(mail);
+    sendData(mail)
    
     }
 }
@@ -74,7 +74,6 @@ async function sendData(mail){
   } 
 
   catch(err){
-    sendFailed();
     console.log(err)
   }
  
