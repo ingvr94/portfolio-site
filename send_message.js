@@ -4,19 +4,17 @@ const form=document.getElementById('form')
 
 const contactButLabel=document.querySelector('.contact__button_label')
 const sendMessageIcon=document.getElementById('sendMessageIcon')
-const contactButton=document.querySelector('.contact__button');
+
 
 
 form.addEventListener('submit',formSend)
 
 async function sendSucceed() {
-        contactButton.classList.add('button__success')
         contactButLabel.textContent='Message Sent'
         sendMessageIcon.classList.remove('uil-message')
         sendMessageIcon.classList.add('uil-check')
         
-        setTimeout(()=>{   
-        contactButton.classList.remove('button__success')    
+        setTimeout(()=>{    
         contactButLabel.textContent='Send Message'
         sendMessageIcon.classList.remove('uil-check')
         sendMessageIcon.classList.add('uil-message')
@@ -25,20 +23,6 @@ async function sendSucceed() {
         form.reset();
 }
 
-async function sendFailed() {
-    contactButton.classList.add('button__failed')
-    contactButLabel.textContent='Message was not sent'
-    sendMessageIcon.classList.remove('uil-message')
-    sendMessageIcon.classList.add('uil-times-circle')
-    
-    setTimeout(()=>{   
-    contactButton.classList.remove('button__failed')    
-    contactButLabel.textContent='Send Message'
-    sendMessageIcon.classList.remove('uil-times-circle')
-    sendMessageIcon.classList.add('uil-message')
-    },3000)
-
-}
 
 async function formSend(e) {
     e.preventDefault();
