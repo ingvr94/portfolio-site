@@ -129,6 +129,6 @@ rus.addEventListener('click',()=>{
    })
    footerCopy.textContent=data[attr].footerCopy
 
-   downloadCV.setAttribute('href', 'https://disk.yandex.ru/i/lOB2_HoeqVvj9A')
+   downloadCV.setAttribute('href', 'https://disk.yandex.ru/i/6QZN2R_Sv5pyRA')
 })
 

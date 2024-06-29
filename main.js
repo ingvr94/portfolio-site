@@ -4,6 +4,7 @@ const navMenu=document.getElementById('nav-menu'),
     navLink=document.querySelectorAll('.nav__link')
     downloadCV=document.getElementById('download_cv')
     aboutBtn=document.querySelector('about__buttons')
+    en=lang.querySelector('.languages__en')
 
 
  if (navToggle) {
@@ -161,6 +162,9 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
 
+en.addEventListener('click',()=>{
+   aboutBtn.setAttribute('href','https://disk.yandex.ru/i/_ZbUzBgMfPcpAA')
+})
 
 
 
