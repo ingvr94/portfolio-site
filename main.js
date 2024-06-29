@@ -4,7 +4,7 @@ const navMenu=document.getElementById('nav-menu'),
     navLink=document.querySelectorAll('.nav__link')
     downloadCV=document.getElementById('download_cv')
     aboutBtn=document.querySelector('about__buttons')
-    en=lang.querySelector('.languages__en')
+    en=document.querySelector('.languages__en')
 
 
  if (navToggle) {
