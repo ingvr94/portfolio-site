@@ -36,6 +36,8 @@ const lang=document.querySelector('.languages')
     footerLink=document.querySelectorAll('.footer__link')
     footerCopy=document.querySelector('.footer__copy_label')
 
+    downloadCV=document.getElementById('download_cv')
+
    
 let data= {
     russian:{
@@ -126,4 +128,7 @@ rus.addEventListener('click',()=>{
     e.textContent=data[attr].footerLink[i]
    })
    footerCopy.textContent=data[attr].footerCopy
+
+   downloadCV.setAttribute('href', 'https://disk.yandex.ru/i/lOB2_HoeqVvj9A')
 })
+

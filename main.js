@@ -2,6 +2,8 @@ const navMenu=document.getElementById('nav-menu'),
     navToggle=document.getElementById('nav-toggle'),
     navClose=document.getElementById('nav-close'),
     navLink=document.querySelectorAll('.nav__link')
+    downloadCV=document.getElementById('download_cv')
+    aboutBtn=document.querySelector('about__buttons')
 
 
  if (navToggle) {
@@ -158,3 +160,11 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+
+aboutBtn.addEventListener('click',()=>{
+   downloadCV.setAttribute('href', 'https://disk.yandex.ru/i/_ZbUzBgMfPcpAA')
+})
+
+
+
