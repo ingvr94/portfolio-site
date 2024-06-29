@@ -162,9 +162,5 @@ themeButton.addEventListener('click', () => {
 })
 
 
-aboutBtn.addEventListener('click',()=>{
-   downloadCV.setAttribute('href', 'https://disk.yandex.ru/i/_ZbUzBgMfPcpAA')
-})
-
 
 
