@@ -488,6 +488,14 @@ img {
 }
 
 .skills__react {
+    width: 80%;
+}
+
+.skills__tailwind {
+    width: 80%;
+}
+
+.skills_bootstrap {
     width: 70%;
 }
 
